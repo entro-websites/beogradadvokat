@@ -3,30 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advokatska kancelarija Radojević | Beograd</title>
-<meta name="description" content="Advokatska kancelarija Radojević iz Beograda - pravna pomoć iz krivičnog, porodičnog, naslednog, privrednog, radnog i drugih oblasti prava. Zakaži konsultacije.">
+<title>Advokatska kancelarija Radojević | Advokat Beograd</title>
+<meta name="description" content="Advokatska kancelarija Radojević, Makedonska 30, Beograd. Krivično, porodično, nasledno, privredno, radno pravo, nekretnine i upravni spor. Zakažite konsultacije.">
+<link rel="icon" href="assets/logo-znak.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --accent:#8a6d3b;
     --accent-dark:#6d5730;
     --accent-darker:#4f3f22;
-    --accent-light:#a8895c;
-    --accent-soft:#f4efe4;
-    --accent-soft-2:#efe6d6;
-    --accent-glow:rgba(138,109,59,0.20);
+    --accent-light:#c4a878;
+    --accent-soft:#f3eee5;
+    --accent-glow:rgba(138,109,59,0.18);
 
-    --text:#201c16;
-    --text-muted:rgba(32,28,22,0.68);
-    --text-faint:rgba(32,28,22,0.46);
+    --ink:#1b1712;
+    --ink-2:#241f18;
+    --text:#1f1b15;
+    --text-muted:rgba(31,27,21,0.72);
+    --text-faint:rgba(31,27,21,0.48);
+    --on-ink:rgba(255,255,255,0.92);
+    --on-ink-muted:rgba(255,255,255,0.64);
 
-    --bg:#fdfcfa;
-    --border:rgba(138,109,59,0.22);
-
-    --radius-btn:4px;
-    --radius-card:14px;
+    --bg:#faf8f4;
+    --line:rgba(138,109,59,0.24);
+    --line-ink:rgba(255,255,255,0.12);
 
     --container:1280px;
   }
@@ -37,94 +39,127 @@
     background:var(--bg);
     color:var(--text);
     font-family:'Open Sans', sans-serif;
-    font-weight:400;
-    line-height:1.65;
+    font-size:16px;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
-  ul{list-style:none;}
-
+  ul,ol{list-style:none;}
   h1,h2,h3,h4{
     font-family:'Bellefair', serif;
     font-weight:400;
+    line-height:1.12;
     color:var(--text);
-    line-height:1.2;
   }
+  p{color:var(--text-muted);max-width:65ch;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
 
   .wrap{
     max-width:var(--container);
     margin:0 auto;
-    padding-left:24px;
-    padding-right:24px;
+    padding-left:32px;
+    padding-right:32px;
   }
   @media (max-width:768px){
     .wrap{padding-left:20px;padding-right:20px;}
   }
 
-  section{
-    padding-top:96px;
-    padding-bottom:96px;
-  }
+  section{padding-top:128px;padding-bottom:128px;}
   @media (max-width:768px){
-    section{padding-top:64px;padding-bottom:64px;}
+    section{padding-top:80px;padding-bottom:80px;}
   }
 
   .eyebrow{
-    display:inline-block;
-    font-size:13px;
-    letter-spacing:.14em;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.18em;
     text-transform:uppercase;
     color:var(--accent-dark);
-    font-weight:700;
-    margin-bottom:16px;
+    margin-bottom:24px;
   }
-
-  p{
-    color:var(--text-muted);
-    max-width:65ch;
+  .eyebrow::before{
+    content:"";
+    width:32px;
+    height:1px;
+    background:var(--accent);
   }
+  .on-ink .eyebrow{color:var(--accent-light);}
+  .on-ink .eyebrow::before{background:var(--accent-light);}
 
-  /* BUTTONS */
+  .h2{font-size:clamp(32px, 4vw, 52px);margin-bottom:24px;}
+  .lead{font-size:20px;line-height:1.6;}
+  @media (max-width:768px){ .lead{font-size:16px;} }
+
+  /* BUTTON — jedan stil, krug sa strelicom je modifikator */
   .btn{
     display:inline-flex;
     align-items:center;
-    justify-content:center;
-    gap:10px;
-    padding:15px 30px;
-    border-radius:var(--radius-btn);
-    font-weight:700;
-    font-size:15px;
-    font-family:'Open Sans', sans-serif;
-    cursor:pointer;
-    border:1px solid transparent;
-    transition:background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .2s ease;
-    white-space:nowrap;
-  }
-  .btn-primary{
-    background:var(--accent);
-    color:#fff;
-  }
-  .btn-primary:hover{
+    gap:16px;
+    padding-top:16px;
+    padding-bottom:16px;
+    padding-left:28px;
+    padding-right:28px;
     background:var(--accent-dark);
-    box-shadow:0 10px 30px -8px var(--accent-glow);
-    transform:translateY(-1px);
+    color:#fff;
+    border:1px solid var(--accent-dark);
+    border-radius:0;
+    font-family:'Open Sans', sans-serif;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:.02em;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background .25s ease, border-color .25s ease;
   }
-  .btn-outline{
-    background:transparent;
-    border:1px solid var(--accent);
-    color:var(--accent-dark);
+  .btn:hover{background:var(--ink);border-color:var(--ink);}
+  .on-ink .btn:hover{background:var(--accent);border-color:var(--accent);}
+  .btn.has-arrow svg{
+    width:16px;height:16px;
+    stroke:currentColor;
+    transition:transform .25s ease;
   }
-  .btn-outline:hover{
-    background:var(--accent-soft);
+  .btn.has-arrow:hover svg{transform:translateX(4px);}
+
+  .text-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-weight:600;
+    color:var(--text);
+    border-bottom:1px solid var(--line);
+    padding-bottom:4px;
+    transition:border-color .2s ease, color .2s ease;
   }
-  .btn-light{
-    background:#fff;
-    color:var(--accent-dark);
+  .text-link:hover{border-color:var(--accent);color:var(--accent-dark);}
+
+  /* TOP BAR */
+  .topbar{
+    background:var(--ink);
+    color:var(--on-ink-muted);
+    font-size:12px;
+    letter-spacing:.04em;
   }
-  .btn-light:hover{
-    background:var(--accent-soft);
+  .topbar .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:24px;
+    height:40px;
+  }
+  .topbar-list{display:flex;gap:32px;align-items:center;}
+  .topbar a:hover{color:#fff;}
+  .topbar svg{width:12px;height:12px;stroke:var(--accent-light);margin-right:8px;vertical-align:-1px;}
+  @media (max-width:991px){
+    .topbar .hide-md{display:none;}
+  }
+  @media (max-width:600px){
+    .topbar .wrap{justify-content:center;}
+    .topbar-lang{display:none;}
   }
 
   /* HEADER */
@@ -133,15 +168,14 @@
     top:0;
     z-index:100;
     background:var(--bg);
-    border-bottom:1px solid transparent;
-    transition:background .3s ease, box-shadow .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+    border-bottom:1px solid var(--line);
+    transition:background .3s ease, box-shadow .3s ease;
   }
   header.scrolled{
-    background:rgba(253,252,250,0.85);
+    background:rgba(250,248,244,0.88);
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
-    box-shadow:0 8px 30px -20px rgba(32,28,22,0.3);
+    box-shadow:0 12px 32px -24px rgba(27,23,18,0.4);
   }
   .nav-inner{
     display:flex;
@@ -149,948 +183,1498 @@
     justify-content:space-between;
     height:88px;
   }
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-  .logo img{height:40px;width:auto;}
+  .logo{display:flex;align-items:center;gap:16px;}
+  .logo img{height:36px;width:auto;}
   .logo-text{
     font-family:'Bellefair', serif;
-    font-size:20px;
-    letter-spacing:.02em;
+    font-size:24px;
+    line-height:1;
+    letter-spacing:.08em;
+    text-transform:uppercase;
     color:var(--text);
   }
   .logo-text span{
     display:block;
+    margin-top:4px;
     font-family:'Open Sans', sans-serif;
-    font-size:11px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
+    font-size:12px;
+    line-height:1.2;
+    letter-spacing:.2em;
     color:var(--accent-dark);
-    font-weight:600;
   }
-
-  nav.desktop-nav{
-    display:flex;
-    align-items:center;
-    gap:40px;
-  }
+  nav.desktop-nav{display:flex;align-items:center;gap:40px;}
   nav.desktop-nav a{
-    font-size:15px;
-    font-weight:600;
+    font-size:16px;
+    font-weight:500;
     color:var(--text-muted);
+    position:relative;
     transition:color .2s ease;
   }
-  nav.desktop-nav a:hover{color:var(--accent-dark);}
-
-  .header-actions{
-    display:flex;
-    align-items:center;
-    gap:24px;
+  nav.desktop-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:-8px;
+    height:1px;
+    background:var(--accent);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .3s ease;
   }
+  nav.desktop-nav a:hover{color:var(--text);}
+  nav.desktop-nav a:hover::after{transform:scaleX(1);}
+  .header-actions{display:flex;align-items:center;gap:24px;}
 
   .hamburger{
     display:none;
     flex-direction:column;
     justify-content:center;
-    gap:5px;
-    width:32px;
-    height:32px;
-    background:none;
-    border:none;
-    cursor:pointer;
-    padding:0;
+    gap:8px;
+    width:32px;height:32px;
+    background:none;border:none;cursor:pointer;
   }
-  .hamburger span{
-    display:block;
-    height:2px;
-    width:100%;
-    background:var(--text);
-    transition:transform .25s ease, opacity .25s ease;
-  }
-  .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger span{display:block;height:1px;width:100%;background:var(--text);transition:transform .25s ease, opacity .25s ease;}
+  .hamburger.active span:nth-child(1){transform:translateY(9px) rotate(45deg);}
   .hamburger.active span:nth-child(2){opacity:0;}
-  .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .hamburger.active span:nth-child(3){transform:translateY(-9px) rotate(-45deg);}
 
   .mobile-nav{
     display:none;
-    flex-direction:column;
     background:var(--bg);
-    border-bottom:1px solid var(--border);
     overflow:hidden;
     max-height:0;
-    transition:max-height .3s ease;
+    transition:max-height .35s ease;
   }
-  .mobile-nav.open{max-height:520px;}
+  .mobile-nav.open{max-height:560px;border-top:1px solid var(--line);}
   .mobile-nav .wrap{
     display:flex;
     flex-direction:column;
     padding-top:16px;
-    padding-bottom:24px;
-    gap:18px;
+    padding-bottom:32px;
   }
-  .mobile-nav a{
-    font-size:16px;
-    font-weight:600;
+  .mobile-nav a:not(.btn){
+    font-family:'Bellefair', serif;
+    font-size:24px;
     color:var(--text);
-    padding:6px 0;
+    padding-top:12px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--line);
   }
-  .mobile-nav .btn{width:100%;}
-
+  .mobile-nav .btn{margin-top:24px;justify-content:center;}
   @media (max-width:991px){
-    nav.desktop-nav{display:none;}
-    .header-actions .btn{display:none;}
+    nav.desktop-nav, .header-actions .btn{display:none;}
     .hamburger{display:flex;}
-    .mobile-nav{display:flex;}
+    .mobile-nav{display:block;}
   }
 
   /* HERO */
   .hero{
-    padding-top:72px;
-    padding-bottom:72px;
+    padding-top:96px;
+    padding-bottom:96px;
     position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:0;bottom:0;
+    right:0;
+    width:36%;
+    background:var(--accent-soft);
   }
   .hero-inner{
+    position:relative;
     display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:64px;
+    grid-template-columns:7fr 5fr;
+    gap:80px;
     align-items:center;
   }
+  .hero-copy{container-type:inline-size;}
   .hero-copy h1{
-    font-size:clamp(38px, 5.4vw, 62px);
-    margin-bottom:24px;
-  }
-  .hero-copy h1 em{
-    font-style:normal;
-    color:var(--accent-dark);
-  }
-  .hero-copy p{
-    font-size:18px;
-    max-width:48ch;
-    margin-bottom:36px;
-  }
-  .hero-media{
-    position:relative;
-    border-radius:var(--radius-card);
-    overflow:hidden;
-    aspect-ratio:4/5;
-    background:var(--accent-soft);
-  }
-  .hero-media img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-  }
-  .hero-media::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(180deg, rgba(32,28,22,0) 45%, rgba(32,28,22,0.55) 100%);
-  }
-  .hero-media-caption{
-    position:absolute;
-    left:24px;
-    bottom:20px;
-    z-index:2;
-    color:#fff;
-    font-size:14px;
-    font-weight:600;
-    letter-spacing:.02em;
-  }
-
-  @media (max-width:991px){
-    .hero-inner{grid-template-columns:1fr;gap:40px;}
-    .hero-media{aspect-ratio:16/10;}
-  }
-
-  /* INTRO / PAIN SECTION */
-  .intro{
-    background:var(--accent-soft);
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-  }
-  .intro-inner{
-    max-width:760px;
-    margin:0 auto;
-    text-align:center;
-  }
-  .intro h2{
-    font-size:clamp(26px,3vw,34px);
-    margin-bottom:20px;
-  }
-  .intro p{
-    margin:0 auto 12px;
-    max-width:60ch;
-    font-size:17px;
-    color:var(--text-muted);
-  }
-
-  /* SECTION HEADS */
-  .section-head{
-    max-width:640px;
-    margin-bottom:56px;
-  }
-  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
-  .section-head h2{
-    font-size:clamp(30px,3.4vw,42px);
-    margin-bottom:18px;
-  }
-
-  /* SERVICES */
-  .services-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:28px;
-  }
-  @media (max-width:991px){
-    .services-grid{grid-template-columns:repeat(2, 1fr);}
-  }
-  @media (max-width:600px){
-    .services-grid{grid-template-columns:1fr;}
-  }
-  .service-card{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:var(--radius-card);
-    padding:32px 28px;
-    transition:box-shadow .3s ease, transform .3s ease, border-color .3s ease;
-  }
-  .service-card:hover{
-    box-shadow:0 20px 50px -30px rgba(32,28,22,0.35);
-    transform:translateY(-3px);
-    border-color:var(--accent-light);
-  }
-  .service-icon{
-    width:48px;
-    height:48px;
-    border-radius:10px;
-    background:var(--accent-soft);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:20px;
-  }
-  .service-icon svg{width:24px;height:24px;stroke:var(--accent-dark);}
-  .service-card h3{
-    font-size:20px;
-    margin-bottom:10px;
-  }
-  .service-card p{
-    font-size:15px;
-    max-width:none;
-  }
-
-  /* PRICING / TARIFA */
-  .pricing-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:28px;
-  }
-  @media (max-width:900px){
-    .pricing-grid{grid-template-columns:1fr;}
-  }
-  .price-card{
-    border:1px solid var(--border);
-    border-radius:var(--radius-card);
-    padding:36px 30px;
-    background:#fff;
-  }
-  .price-card.featured{
-    background:var(--accent-soft);
-    border-color:var(--accent-light);
-  }
-  .price-card h3{
-    font-size:21px;
-    margin-bottom:14px;
-  }
-  .price-card p{
-    font-size:15px;
-    max-width:none;
-    margin-bottom:0;
-  }
-  .pricing-note{
-    margin-top:40px;
-    padding:24px 28px;
-    border-left:3px solid var(--accent);
-    background:var(--accent-soft);
-    border-radius:0 var(--radius-card) var(--radius-card) 0;
-  }
-  .pricing-note p{max-width:none;font-size:15px;margin:0;}
-
-  /* ABOUT */
-  .about-inner{
-    display:grid;
-    grid-template-columns:0.85fr 1.15fr;
-    gap:64px;
-    align-items:center;
-  }
-  .about-media{
-    border-radius:var(--radius-card);
-    overflow:hidden;
-    aspect-ratio:3/4;
-    background:var(--accent-soft);
-  }
-  .about-media img{width:100%;height:100%;object-fit:cover;}
-  .about-copy h2{
-    font-size:clamp(28px,3.2vw,38px);
-    margin-bottom:20px;
-  }
-  .about-copy p{margin-bottom:16px;max-width:58ch;}
-  .about-list{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    margin-top:28px;
-  }
-  .about-list li{
-    display:flex;
-    align-items:flex-start;
-    gap:12px;
-    font-size:15px;
-    color:var(--text-muted);
-  }
-  .about-list svg{
-    flex-shrink:0;
-    width:20px;
-    height:20px;
-    stroke:var(--accent-dark);
-    margin-top:2px;
-  }
-  @media (max-width:900px){
-    .about-inner{grid-template-columns:1fr;gap:36px;}
-    .about-media{aspect-ratio:16/10;}
-  }
-
-  /* STATS */
-  .stats{
-    background:var(--accent-darker);
-    position:relative;
-    overflow:hidden;
-  }
-  .stats::before{
-    content:"";
-    position:absolute;
-    top:-30%;
-    right:-10%;
-    width:60%;
-    height:160%;
-    background:radial-gradient(circle, var(--accent-glow), transparent 70%);
-    pointer-events:none;
-  }
-  .stats-inner{
-    display:flex;
-    flex-wrap:wrap;
-    gap:48px;
-    align-items:center;
-    justify-content:space-between;
-    position:relative;
-    z-index:1;
-  }
-  .stats-text{max-width:440px;}
-  .stats-text h2{
-    color:#fff;
-    font-size:clamp(26px,3vw,34px);
-    margin-bottom:14px;
-  }
-  .stats-text p{
-    color:rgba(255,255,255,0.75);
-    max-width:44ch;
-  }
-  .stats-numbers{
-    display:flex;
-    gap:56px;
-  }
-  .stat-item{text-align:left;}
-  .stat-number{
-    font-family:'Bellefair', serif;
-    font-size:56px;
-    color:#fff;
-    line-height:1;
-  }
-  .stat-label{
-    color:rgba(255,255,255,0.65);
-    font-size:14px;
-    margin-top:8px;
-    max-width:16ch;
-  }
-  @media (max-width:768px){
-    .stats-numbers{gap:36px;}
-    .stat-number{font-size:44px;}
-  }
-
-  /* CTA CONTACT */
-  .contact-inner{
-    display:grid;
-    grid-template-columns:0.9fr 1.1fr;
-    gap:64px;
-  }
-  .contact-info h2{
-    font-size:clamp(28px,3.2vw,38px);
-    margin-bottom:18px;
-  }
-  .contact-info p{margin-bottom:32px;}
-  .contact-items{
-    display:flex;
-    flex-direction:column;
-    gap:24px;
+    font-size:clamp(40px, 6vw, 88px);
+    font-size:clamp(40px, 15.2cqi, 88px);
+    line-height:1.04;
+    letter-spacing:-.005em;
     margin-bottom:32px;
   }
-  .contact-item{
+  .hero-copy h1 span{display:block;white-space:nowrap;}
+  .hero-copy h1 span + span{color:var(--accent-dark);}
+  .hero-copy .lead{max-width:48ch;margin-bottom:40px;}
+  .hero-actions{display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
+  .hero-points{
     display:flex;
-    align-items:flex-start;
-    gap:16px;
+    flex-wrap:wrap;
+    gap:16px 40px;
+    margin-top:56px;
+    padding-top:32px;
+    border-top:1px solid var(--line);
   }
-  .contact-item svg{
-    flex-shrink:0;
-    width:22px;
-    height:22px;
-    stroke:var(--accent-dark);
-    margin-top:2px;
-  }
-  .contact-item strong{
-    display:block;
-    font-size:15px;
-    color:var(--text);
-    margin-bottom:3px;
-  }
-  .contact-item span{
-    font-size:15px;
+  .hero-points li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:16px;
     color:var(--text-muted);
   }
+  .hero-points svg{width:20px;height:20px;stroke:var(--accent);flex-shrink:0;}
 
-  .contact-form{
+  .hero-media{position:relative;}
+  .hero-photo{
+    position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
     background:var(--accent-soft);
-    border:1px solid var(--border);
-    border-radius:var(--radius-card);
-    padding:40px;
   }
-  .contact-form h3{
-    font-size:22px;
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;}
+  .hero-frame{
+    position:absolute;
+    top:-24px;left:24px;
+    width:100%;
+    height:100%;
+    border:1px solid var(--accent);
+    pointer-events:none;
+  }
+  .js .hero-frame{animation:frame 2s cubic-bezier(.65,0,.35,1) .3s both;}
+  @keyframes frame{
+    from{clip-path:inset(0 100% 100% 0);}
+    to{clip-path:inset(0 0 0 0);}
+  }
+  .hero-card{
+    position:absolute;
+    background:#fff;
+    box-shadow:0 24px 56px -28px rgba(27,23,18,0.45);
+  }
+  .hero-card.stat{
+    left:-48px;
+    bottom:48px;
+    padding-top:20px;padding-bottom:20px;padding-left:24px;padding-right:32px;
+    display:flex;align-items:center;gap:16px;
+  }
+  .hero-card.stat strong{
+    font-family:'Bellefair', serif;
+    font-weight:400;
+    font-size:48px;
+    line-height:1;
+    color:var(--accent-dark);
+  }
+  .hero-card.stat span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;line-height:1.5;color:var(--text-muted);}
+  .hero-card.name{
+    right:-20px;
+    top:40px;
+    background:var(--ink);
+    padding-top:16px;padding-bottom:16px;padding-left:20px;padding-right:20px;
+  }
+  .hero-card.name strong{display:block;font-family:'Bellefair', serif;font-weight:400;font-size:20px;color:#fff;line-height:1.2;}
+  .hero-card.name span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-light);}
+
+  @media (max-width:991px){
+    .hero::before{width:100%;top:auto;height:40%;}
+    .hero-inner{grid-template-columns:1fr;gap:64px;}
+    .hero-media{max-width:480px;margin-left:auto;margin-right:auto;width:100%;}
+    .hero-card.stat{left:-12px;}
+    .hero-card.name{right:-12px;}
+    .hero-media{padding-right:16px;}
+    .hero-frame{top:-16px;left:16px;width:calc(100% - 16px);}
+  }
+  @media (max-width:768px){
+    .hero{padding-top:56px;padding-bottom:80px;}
+    .hero-points{margin-top:40px;}
+  }
+
+  /* CREDENTIALS */
+  .creds{
+    padding-top:48px;padding-bottom:48px;
+    background:var(--ink);
+  }
+  .creds-list{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+  .creds-list li{
+    padding-left:32px;
+    padding-right:32px;
+    border-left:1px solid var(--line-ink);
+  }
+  .creds-list li:first-child{border-left:none;padding-left:0;}
+  .creds-list strong{
+    display:block;
+    font-family:'Bellefair', serif;
+    font-weight:400;
+    font-size:24px;
+    line-height:1.2;
+    color:#fff;
     margin-bottom:8px;
   }
-  .contact-form > p{
-    font-size:14px;
-    margin-bottom:24px;
+  .creds-list span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-ink-muted);}
+  @media (max-width:991px){
+    .creds-list{grid-template-columns:repeat(2, 1fr);gap:32px 0;}
+    .creds-list li:nth-child(3){border-left:none;padding-left:0;}
   }
-  .form-row{
+  @media (max-width:520px){
+    .creds-list{grid-template-columns:1fr;gap:24px;}
+    .creds-list li{border-left:none;padding-left:0;padding-right:0;padding-bottom:24px;border-bottom:1px solid var(--line-ink);}
+    .creds-list li:last-child{border-bottom:none;padding-bottom:0;}
+  }
+
+  /* SECTION HEAD */
+  .section-head{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-    margin-bottom:16px;
+    grid-template-columns:5fr 7fr;
+    gap:80px;
+    align-items:end;
+    margin-bottom:64px;
   }
-  .form-field{
+  .section-head .h2{margin-bottom:0;}
+  .section-head p{margin-bottom:8px;}
+  @media (max-width:900px){
+    .section-head{grid-template-columns:1fr;gap:24px;margin-bottom:48px;}
+  }
+
+  /* SITUACIJE */
+  .situations{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+  }
+  .situation{
+    padding-top:40px;padding-bottom:40px;padding-left:36px;padding-right:36px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
     display:flex;
     flex-direction:column;
-    gap:6px;
-    margin-bottom:16px;
+    gap:16px;
+    background:transparent;
+    transition:background .3s ease;
   }
+  .situation:hover{background:#fff;}
+  .situation q{
+    font-family:'Bellefair', serif;
+    font-size:28px;
+    line-height:1.2;
+    color:var(--text);
+    quotes:"„" "“";
+  }
+  .situation p{font-size:16px;}
+  .situation .tag{
+    margin-top:auto;
+    padding-top:8px;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    font-weight:600;
+  }
+  @media (max-width:991px){ .situations{grid-template-columns:repeat(2, 1fr);} }
+  @media (max-width:600px){
+    .situations{grid-template-columns:1fr;}
+    .situation{padding-left:24px;padding-right:24px;padding-top:32px;padding-bottom:32px;}
+    .situation q{font-size:24px;}
+  }
+
+  /* OBLASTI */
+  .areas{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .areas-inner{
+    display:grid;
+    grid-template-columns:4fr 8fr;
+    gap:80px;
+    align-items:start;
+  }
+  .areas-aside{position:sticky;top:128px;}
+  .areas-aside p{margin-bottom:32px;}
+  .areas-list li{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:24px;
+    padding-top:32px;
+    padding-bottom:32px;
+    border-top:1px solid var(--line);
+  }
+  .areas-list li:last-child{border-bottom:1px solid var(--line);}
+  .area-no{
+    font-family:'Bellefair', serif;
+    font-size:20px;
+    color:var(--accent);
+    line-height:1.6;
+  }
+  .areas-list h3{font-size:28px;margin-bottom:8px;}
+  .areas-list p{font-size:16px;}
+  .maxim{
+    display:block;
+    margin-top:12px;
+    font-family:'Bellefair', serif;
+    font-size:20px;
+    line-height:1.4;
+    color:var(--accent-dark);
+  }
+  @media (max-width:900px){
+    .areas-inner{grid-template-columns:1fr;gap:48px;}
+    .areas-aside{position:static;}
+    .areas-list li{grid-template-columns:40px 1fr;gap:16px;}
+    .areas-list h3{font-size:24px;}
+  }
+
+  /* O ADVOKATU */
+  .about-inner{
+    display:grid;
+    grid-template-columns:5fr 7fr;
+    gap:96px;
+    align-items:start;
+  }
+  .about-photo{
+    position:relative;
+    background:var(--accent-soft);
+    aspect-ratio:2/3;
+    overflow:hidden;
+  }
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;}
+  .about-caption{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    margin-top:16px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--text-faint);
+  }
+  .about-copy > p{margin-bottom:20px;}
+  .about-copy > p.lead{color:var(--text);}
+  .timeline{margin-top:48px;border-left:1px solid var(--line);}
+  .timeline li{
+    position:relative;
+    padding-left:40px;
+    padding-bottom:32px;
+  }
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline li::before{
+    content:"";
+    position:absolute;
+    left:-4px;top:12px;
+    width:8px;height:8px;
+    background:var(--bg);
+    border:1px solid var(--accent);
+    transform:rotate(45deg);
+  }
+  .timeline time{
+    display:block;
+    font-family:'Bellefair', serif;
+    font-size:24px;
+    line-height:1.4;
+    color:var(--accent-dark);
+  }
+  .timeline p{font-size:16px;}
+  @media (max-width:900px){
+    .about-inner{grid-template-columns:1fr;gap:56px;}
+    .about-media{max-width:440px;}
+  }
+
+  /* KANCELARIJA */
+  .office{background:var(--accent-soft);}
+  .office-photo{
+    position:relative;
+    aspect-ratio:21/8;
+    overflow:hidden;
+    margin-bottom:64px;
+  }
+  .office-photo img{width:100%;height:100%;object-fit:cover;}
+  .office-photo figcaption{
+    position:absolute;
+    left:0;bottom:0;
+    background:var(--bg);
+    padding-top:16px;padding-bottom:16px;padding-left:24px;padding-right:24px;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--text-muted);
+  }
+  .office-grid{
+    display:grid;
+    grid-template-columns:5fr 7fr;
+    gap:80px;
+  }
+  .network{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:0 48px;
+  }
+  .network li{
+    display:flex;
+    gap:16px;
+    align-items:baseline;
+    padding-top:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+    color:var(--text);
+  }
+  .network li span{font-family:'Bellefair', serif;font-size:16px;color:var(--accent);min-width:24px;}
+  @media (max-width:900px){
+    .office-grid{grid-template-columns:1fr;gap:40px;}
+    .office-photo{aspect-ratio:16/9;margin-bottom:48px;}
+  }
+  @media (max-width:600px){ .network{grid-template-columns:1fr;} }
+
+  /* NAČELA (tamno) */
+  .principles{background:var(--ink);position:relative;overflow:hidden;}
+  .principles::before{
+    content:"";
+    position:absolute;
+    right:-12%;top:-40%;
+    width:64%;height:180%;
+    background:radial-gradient(closest-side, var(--accent-glow), transparent);
+    pointer-events:none;
+  }
+  .principles .wrap{position:relative;}
+  .principles blockquote{
+    max-width:1000px;
+    margin-bottom:80px;
+  }
+  .principles blockquote p{
+    font-family:'Bellefair', serif;
+    font-size:clamp(32px, 4.4vw, 56px);
+    line-height:1.16;
+    color:#fff;
+    max-width:none;
+  }
+  .principles blockquote p::before{content:"„";color:var(--accent-light);}
+  .principles blockquote p::after{content:"“";color:var(--accent-light);}
+  .principles cite{
+    display:block;
+    margin-top:32px;
+    font-style:normal;
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--on-ink-muted);
+  }
+  .values{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    border-top:1px solid var(--line-ink);
+  }
+  .values li{
+    padding-top:32px;
+    padding-right:24px;
+  }
+  .values strong{
+    display:block;
+    font-family:'Bellefair', serif;
+    font-weight:400;
+    font-size:28px;
+    color:#fff;
+    margin-bottom:8px;
+  }
+  .values span{font-size:16px;color:var(--on-ink-muted);line-height:1.6;display:block;}
+  .two-way{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:48px;
+    margin-top:80px;
+    padding-top:48px;
+    border-top:1px solid var(--line-ink);
+  }
+  .two-way h3{color:#fff;font-size:28px;margin-bottom:12px;}
+  .two-way p{color:var(--on-ink-muted);}
+  @media (max-width:991px){
+    .values{grid-template-columns:repeat(2, 1fr);gap:0 32px;}
+    .values li{padding-bottom:8px;}
+  }
+  @media (max-width:600px){
+    .values, .two-way{grid-template-columns:1fr;}
+    .principles blockquote{margin-bottom:56px;}
+    .two-way{margin-top:56px;}
+  }
+
+  /* SARADNJA */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:32px;
+    counter-reset:step;
+  }
+  .step{
+    border-top:1px solid var(--text);
+    padding-top:24px;
+  }
+  .step-no{
+    font-family:'Bellefair', serif;
+    font-size:48px;
+    line-height:1;
+    color:var(--accent);
+    margin-bottom:24px;
+  }
+  .step h3{font-size:24px;margin-bottom:12px;}
+  .step p{font-size:16px;}
+  @media (max-width:991px){ .steps{grid-template-columns:repeat(2, 1fr);gap:48px 32px;} }
+  @media (max-width:600px){ .steps{grid-template-columns:1fr;gap:40px;} }
+
+  /* TARIFE */
+  .fees{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .tabs{
+    display:flex;
+    gap:8px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:40px;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{
+    background:none;
+    border:none;
+    border-bottom:2px solid transparent;
+    margin-bottom:-1px;
+    padding-top:16px;padding-bottom:16px;padding-left:20px;padding-right:20px;
+    font-family:'Open Sans', sans-serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--text-muted);
+    cursor:pointer;
+    white-space:nowrap;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .tab:first-child{padding-left:0;}
+  .tab:hover{color:var(--text);}
+  .tab[aria-selected="true"]{color:var(--text);border-bottom-color:var(--accent);}
+  .fee-panel + .fee-panel{margin-top:64px;}
+  .js .fee-panel + .fee-panel{margin-top:0;}
+  .js .fee-panel[hidden]{display:none;}
+  .fee-panel h3{font-size:28px;margin-bottom:24px;}
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  table{
+    width:100%;
+    min-width:720px;
+    border-collapse:collapse;
+    font-size:16px;
+  }
+  th, td{
+    text-align:left;
+    vertical-align:top;
+    padding-top:16px;padding-bottom:16px;padding-left:16px;padding-right:16px;
+    border-bottom:1px solid var(--line);
+  }
+  th:first-child, td:first-child{padding-left:0;}
+  thead th{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    line-height:1.5;
+    color:var(--text-faint);
+    border-bottom:1px solid var(--text);
+  }
+  tbody th{font-weight:600;color:var(--text);}
+  tbody td{color:var(--text-muted);font-variant-numeric:tabular-nums;white-space:nowrap;}
+  tbody td.wrap-cell{white-space:normal;}
+  .t-nowrap tbody th{white-space:nowrap;}
+  tbody tr:hover{background:var(--bg);}
+  .fee-note{
+    margin-top:24px;
+    font-size:16px;
+    color:var(--text-faint);
+    max-width:none;
+  }
+  .fee-aside{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:32px;
+    margin-top:64px;
+  }
+  .fee-aside div{
+    background:var(--accent-soft);
+    padding-top:32px;padding-bottom:32px;padding-left:32px;padding-right:32px;
+  }
+  .fee-aside h4{font-size:24px;margin-bottom:12px;}
+  .fee-aside p{font-size:16px;}
+  @media (max-width:768px){
+    .fee-aside{grid-template-columns:1fr;gap:16px;}
+    .fee-aside div{padding-left:24px;padding-right:24px;padding-top:28px;padding-bottom:28px;}
+  }
+
+  /* FAQ */
+  .faq-inner{
+    display:grid;
+    grid-template-columns:4fr 8fr;
+    gap:80px;
+  }
+  .faq-list details{border-top:1px solid var(--line);}
+  .faq-list details:last-child{border-bottom:1px solid var(--line);}
+  .faq-list summary{
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:24px;
+    padding-top:28px;
+    padding-bottom:28px;
+    cursor:pointer;
+    font-family:'Bellefair', serif;
+    font-size:24px;
+    line-height:1.3;
+    color:var(--text);
+  }
+  .faq-list summary::-webkit-details-marker{display:none;}
+  .faq-list summary::after{
+    content:"";
+    flex-shrink:0;
+    width:12px;height:12px;
+    border-right:1px solid var(--accent-dark);
+    border-bottom:1px solid var(--accent-dark);
+    transform:rotate(45deg) translate(-4px, -4px);
+    transition:transform .3s ease;
+  }
+  .faq-list details[open] summary::after{transform:rotate(-135deg) translate(-4px, -4px);}
+  .faq-list details p{padding-bottom:28px;margin-top:-8px;}
+  @media (max-width:900px){
+    .faq-inner{grid-template-columns:1fr;gap:40px;}
+    .faq-list summary{font-size:20px;}
+  }
+
+  /* KONTAKT */
+  .contact{padding-bottom:0;}
+  .contact-inner{
+    display:grid;
+    grid-template-columns:5fr 7fr;
+    gap:96px;
+  }
+  .contact-info > p{margin-bottom:40px;}
+  .contact-items{border-top:1px solid var(--line);}
+  .contact-item{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:16px;
+    padding-top:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+  }
+  .contact-item dt{
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--text-faint);
+    padding-top:4px;
+  }
+  .contact-item dd{color:var(--text);}
+  .contact-item dd a{display:block;transition:color .2s ease;}
+  .contact-item dd a:hover{color:var(--accent-dark);}
+  .contact-item small{display:block;font-size:12px;color:var(--text-faint);letter-spacing:.04em;}
+
+  .contact-form{
+    background:#fff;
+    border:1px solid var(--line);
+    padding-top:48px;padding-bottom:48px;padding-left:48px;padding-right:48px;
+  }
+  .contact-form h3{font-size:32px;margin-bottom:8px;}
+  .contact-form > p{font-size:16px;margin-bottom:32px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .form-field{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
   .form-field label{
-    font-size:13px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
     font-weight:600;
     color:var(--text-muted);
   }
   .form-field input,
+  .form-field select,
   .form-field textarea{
-    border:1px solid var(--border);
-    border-radius:var(--radius-btn);
-    padding:12px 14px;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--line);
+    border-radius:0;
+    padding-top:8px;padding-bottom:12px;
     font-family:'Open Sans', sans-serif;
-    font-size:15px;
+    font-size:16px;
     color:var(--text);
-    background:#fff;
+    background:transparent;
     resize:vertical;
+    transition:border-color .2s ease;
+    -webkit-appearance:none;
+    appearance:none;
+  }
+  .form-field input,
+  .form-field select{height:44px;}
+  .form-field select{
+    background-image:linear-gradient(45deg, transparent 50%, var(--accent-dark) 50%), linear-gradient(135deg, var(--accent-dark) 50%, transparent 50%);
+    background-position:calc(100% - 12px) 50%, calc(100% - 8px) 50%;
+    background-size:4px 4px;
+    background-repeat:no-repeat;
+    cursor:pointer;
   }
   .form-field input:focus,
-  .form-field textarea:focus{
-    outline:none;
-    border-color:var(--accent);
-  }
-  .contact-form .btn{width:100%;margin-top:8px;}
+  .form-field select:focus,
+  .form-field textarea:focus{outline:none;border-bottom-color:var(--accent);}
+  .form-foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:8px;}
+  .form-foot small{font-size:12px;color:var(--text-faint);max-width:32ch;line-height:1.6;}
 
+  .map{
+    margin-top:128px;
+    height:440px;
+    border-top:1px solid var(--line);
+    background:var(--accent-soft);
+  }
+  .map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(1) sepia(.2) contrast(.96);}
   @media (max-width:900px){
-    .contact-inner{grid-template-columns:1fr;gap:40px;}
-    .form-row{grid-template-columns:1fr;}
-    .contact-form{padding:28px;}
+    .contact-inner{grid-template-columns:1fr;gap:56px;}
+    .map{margin-top:80px;height:360px;}
   }
-
-  /* FINAL CTA */
-  .final-cta{
-    background:var(--accent);
-    text-align:center;
-  }
-  .final-cta h2{
-    color:#fff;
-    font-size:clamp(28px,3.6vw,42px);
-    margin-bottom:18px;
-  }
-  .final-cta p{
-    color:rgba(255,255,255,0.85);
-    margin:0 auto 32px;
-    max-width:52ch;
-  }
-  .final-cta-actions{
-    display:flex;
-    gap:16px;
-    justify-content:center;
-    flex-wrap:wrap;
+  @media (max-width:600px){
+    .contact-form{padding-left:24px;padding-right:24px;padding-top:32px;padding-bottom:32px;}
+    .form-row{grid-template-columns:1fr;gap:0;}
+    .contact-item{grid-template-columns:1fr;gap:4px;}
   }
 
   /* FOOTER */
   footer{
-    background:#1a1712;
-    padding-top:64px;
-    padding-bottom:32px;
+    background:var(--ink);
+    padding-top:96px;
+    padding-bottom:40px;
+    color:var(--on-ink-muted);
   }
   .footer-top{
     display:grid;
-    grid-template-columns:1.3fr 1fr 1fr;
+    grid-template-columns:4fr 3fr 3fr 3fr;
     gap:48px;
-    padding-bottom:48px;
-    border-bottom:1px solid rgba(255,255,255,0.12);
+    padding-bottom:64px;
+    border-bottom:1px solid var(--line-ink);
   }
-  .footer-logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:18px;
-  }
-  .footer-logo img{height:36px;}
-  .footer-logo span{
-    font-family:'Bellefair', serif;
-    font-size:19px;
-    color:#fff;
-  }
-  .footer-top p{
-    color:rgba(255,255,255,0.55);
-    font-size:14px;
-    max-width:36ch;
-  }
+  .footer-brand img{width:160px;height:auto;margin-bottom:24px;}
+  .footer-brand p{font-size:16px;color:var(--on-ink-muted);max-width:36ch;}
   .footer-col h4{
-    color:#fff;
     font-family:'Open Sans', sans-serif;
-    font-size:14px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.16em;
     text-transform:uppercase;
-    letter-spacing:.08em;
-    font-weight:700;
-    margin-bottom:18px;
+    color:var(--accent-light);
+    margin-bottom:24px;
   }
-  .footer-col ul{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
-  .footer-col a{
-    color:rgba(255,255,255,0.6);
-    font-size:14px;
-    transition:color .2s ease;
-  }
+  .footer-col ul{display:flex;flex-direction:column;gap:12px;}
+  .footer-col a, .footer-col li{font-size:16px;color:var(--on-ink-muted);transition:color .2s ease;}
   .footer-col a:hover{color:#fff;}
   .footer-bottom{
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
-    gap:12px;
-    padding-top:28px;
+    gap:16px 40px;
+    padding-top:32px;
   }
-  .footer-bottom p{
-    color:rgba(255,255,255,0.4);
-    font-size:13px;
-    max-width:none;
-  }
-  @media (max-width:768px){
-    .footer-top{grid-template-columns:1fr;gap:32px;}
-  }
+  .footer-bottom p{font-size:12px;color:rgba(255,255,255,0.44);max-width:none;letter-spacing:.02em;}
+  @media (max-width:991px){ .footer-top{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .footer-top{grid-template-columns:1fr;gap:40px;} footer{padding-top:64px;} }
 
-  /* REVEAL */
-  .reveal{
-    opacity:1;
-    transform:translateY(14px);
-    transition:opacity .6s ease, transform .6s ease;
-  }
-  .reveal.in-view{
-    opacity:1;
-    transform:translateY(0);
+  /* REVEAL — sadržaj je uvek vidljiv, JS samo dodaje mali pomeraj */
+  .js .reveal{transform:translateY(12px);transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+  .js .reveal.in-view{transform:none;}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .js .reveal{transform:none;transition:none;}
+    .js .hero-frame{animation:none;}
   }
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
+<div class="topbar">
+  <div class="wrap">
+    <ul class="topbar-list">
+      <li class="hide-md"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Makedonska 30, lokal 1, Beograd</li>
+      <li><a href="tel:+381604168320"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>+381 60 416 8320</a></li>
+      <li class="hide-md"><a href="mailto:advokatrobert.radojevic@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="2" y="4" width="20" height="16"/><path d="M22 6l-10 7L2 6"/></svg>advokatrobert.radojevic@gmail.com</a></li>
+    </ul>
+    <span class="topbar-lang">Srpski · English</span>
+  </div>
+</div>
+
 <header id="top">
   <div class="wrap nav-inner">
-    <a href="#top" class="logo">
-      <img src="assets/logo.png" alt="Logo advokatske kancelarije Radojević">
-      <div class="logo-text">
-        Radojević
-        <span>Advokatska kancelarija</span>
-      </div>
+    <a href="#top" class="logo" aria-label="Advokatska kancelarija Radojević, početak stranice">
+      <img src="assets/logo-znak.png" alt="" width="54" height="36">
+      <div class="logo-text">Radojević<span>Advokatska kancelarija</span></div>
     </a>
-    <nav class="desktop-nav">
-      <a href="#usluge">Usluge</a>
+    <nav class="desktop-nav" aria-label="Glavna navigacija">
+      <a href="#oblasti">Oblasti prava</a>
+      <a href="#advokat">O advokatu</a>
+      <a href="#kancelarija">Kancelarija</a>
       <a href="#tarife">Tarife</a>
-      <a href="#o-nama">O nama</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <div class="header-actions">
-      <a href="#kontakt" class="btn btn-primary">Zakaži konsultacije</a>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Otvori meni">
-        <span></span>
-        <span></span>
-        <span></span>
+      <a href="#kontakt" class="btn">Zakažite konsultacije</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Otvori meni" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </div>
   <div class="mobile-nav" id="mobileNav">
     <div class="wrap">
-      <a href="#usluge">Usluge</a>
+      <a href="#oblasti">Oblasti prava</a>
+      <a href="#advokat">O advokatu</a>
+      <a href="#kancelarija">Kancelarija</a>
       <a href="#tarife">Tarife</a>
-      <a href="#o-nama">O nama</a>
+      <a href="#pitanja">Pitanja</a>
       <a href="#kontakt">Kontakt</a>
-      <a href="#kontakt" class="btn btn-primary">Zakaži konsultacije</a>
+      <a href="#kontakt" class="btn">Zakažite konsultacije</a>
     </div>
   </div>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <h1>Pravna podrška kojoj možeš da veruješ kad je najteže</h1>
-      <p>Vodim te kroz sudske postupke, sporove oko imovine, nasledstva i posla - jasno, bez nepotrebnog čekanja i sa planom od prvog razgovora.</p>
-      <a href="#kontakt" class="btn btn-primary">Zakaži konsultacije</a>
+      <span class="eyebrow">Advokat · Beograd</span>
+      <h1><span>Znanje i lojalnost</span><span>na Vašoj strani.</span></h1>
+      <p class="lead">Domaća i strana, fizička i pravna lica zastupamo pred sudovima i organima u Srbiji. Kancelarija je u užem centru Beograda, u Makedonskoj 30.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn has-arrow">Zakažite konsultacije
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></svg>
+        </a>
+        <a href="tel:+381604168320" class="text-link">+381 60 416 8320</a>
+      </div>
+      <ul class="hero-points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg>Domaći i strani klijenti</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8"/><path d="M8 12h5"/></svg>Srpski i engleski jezik</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M4 21h16"/><path d="M6 21V10"/><path d="M18 21V10"/><path d="M10 21V10"/><path d="M14 21V10"/><path d="M3 10l9-6 9 6z"/></svg>Kancelarija u užem centru</li>
+      </ul>
     </div>
+
     <div class="hero-media">
-      <img src="assets/advokat-radojevic-beograd.jpeg" alt="Advokat Radojević za radnim stolom tokom telefonskog razgovora sa klijentom">
-      <div class="hero-media-caption">Advokatska kancelarija Radojević, Beograd</div>
+      <div class="hero-frame" aria-hidden="true"></div>
+      <div class="hero-photo">
+        <img src="assets/advokat-radojevic-beograd.jpeg" alt="Advokat Robert A. Radojević za radnim stolom, razgovara telefonom sa klijentom" width="900" height="1348">
+      </div>
+      <div class="hero-card name">
+        <strong>Robert A. Radojević</strong>
+        <span>Advokat, osnivač</span>
+      </div>
+      <div class="hero-card stat">
+        <strong>99%</strong>
+        <span>dobijenih<br>slučajeva</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="intro">
-  <div class="wrap intro-inner reveal">
-    <h2>Kad se nađeš u sporu, ne znaš odakle da počneš</h2>
-    <p>Tužba, ostavinska rasprava, otkaz, sporna parcela - svaki od tih trenutaka nosi rokove i papire koje ne smeš da propustiš.</p>
-    <p>Tu ulazim ja: preuzimam predmet, objasnim ti realne opcije i vodim postupak dok ti radiš svoj posao.</p>
+<section class="creds on-ink" aria-label="Kvalifikacije">
+  <div class="wrap">
+    <ul class="creds-list">
+      <li class="reveal"><strong>Pravni fakultet</strong><span>Univerzitet u Beogradu</span></li>
+      <li class="reveal"><strong>Pravosudni ispit</strong><span>Položen u Beogradu, 2021.</span></li>
+      <li class="reveal"><strong>Advokatska komora</strong><span>Upisan u imenik advokata</span></li>
+      <li class="reveal"><strong>100% zadovoljnih</strong><span>klijenata</span></li>
+    </ul>
   </div>
 </section>
 
-<section id="usluge">
+<section id="situacije">
   <div class="wrap">
-    <div class="section-head center reveal">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Kada nas zovu</span>
+        <h2 class="h2">Pravni problem retko stiže na vreme.</h2>
+      </div>
+      <p class="lead">Najčešće počinje jednim pozivom, pismom ili rešenjem. Ovo su situacije sa kojima nam se klijenti obraćaju.</p>
+    </div>
+
+    <div class="situations">
+      <article class="situation reveal">
+        <q>Stigao mi je poziv na saslušanje.</q>
+        <p>Odbrana u krivičnom postupku, od prvog saslušanja do glavnog pretresa.</p>
+        <span class="tag">Krivično pravo</span>
+      </article>
+      <article class="situation reveal">
+        <q>Rešenje čekam već dve godine.</q>
+        <p>Kada organ ćuti, pokrećemo upravni spor pred Upravnim sudom u Beogradu.</p>
+        <span class="tag">Upravni spor</span>
+      </article>
+      <article class="situation reveal">
+        <q>Kupujem stan u izgradnji.</q>
+        <p>Pre potpisa ugovora proveravamo investitora, papire i upis u katastar.</p>
+        <span class="tag">Nekretnine</span>
+      </article>
+      <article class="situation reveal">
+        <q>Osnivam firmu.</q>
+        <p>Osnivanje DOO, AD i OD, upis u registar privrednih subjekata i ugovori.</p>
+        <span class="tag">Privredno pravo</span>
+      </article>
+      <article class="situation reveal">
+        <q>Pokrenuta je ostavinska rasprava.</q>
+        <p>Nasleđivanje po zakonu i po testamentu, deoba i sporovi među naslednicima.</p>
+        <span class="tag">Nasledno pravo</span>
+      </article>
+      <article class="situation reveal">
+        <q>Uručen mi je otkaz.</q>
+        <p>Radni sporovi, otkazi i zaštita prava iz radnog odnosa pred sudom.</p>
+        <span class="tag">Radno pravo</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="oblasti" class="areas">
+  <div class="wrap areas-inner">
+    <aside class="areas-aside reveal">
       <span class="eyebrow">Oblasti prava</span>
-      <h2>U čemu konkretno mogu da te zastupam</h2>
-      <p style="margin:0 auto;">Radim sa fizičkim i pravnim licima, domaćim i stranim, u ovim oblastima.</p>
-    </div>
+      <h2 class="h2">Jedanaest oblasti, jedna kancelarija.</h2>
+      <p>Pružamo pravnu pomoć fizičkim licima, preduzetnicima i privrednim društvima, a najviše u oblasti radnog, građanskog i krivičnog prava.</p>
+      <a href="#kontakt" class="btn has-arrow">Opišite svoj predmet
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></svg>
+      </a>
+    </aside>
 
-    <div class="services-grid">
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M5 8h14"/><path d="M5 8l-3 5h6l-3-5z"/><path d="M19 8l-3 5h6l-3-5z"/><path d="M9 21h6"/><path d="M12 6v15"/></svg>
+    <ol class="areas-list">
+      <li class="reveal">
+        <span class="area-no">01</span>
+        <div>
+          <h3>Krivično pravo</h3>
+          <p>Odbrana okrivljenih i zastupanje oštećenih, privatne tužbe, krivične prijave i žalbe.</p>
+          <span class="maxim">Na učinioca krivičnog dela primenjuje se zakon koji je važio u vreme izvršenja dela.</span>
         </div>
-        <h3>Krivično pravo</h3>
-        <p>Branim te u krivičnom postupku, od saslušanja u policiji do glavnog pretresa na sudu.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6" r="2.4"/><circle cx="16" cy="6" r="2.4"/><path d="M4 20v-3a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4v3"/><path d="M12 20v-3a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4v3"/></svg>
+      </li>
+      <li class="reveal">
+        <span class="area-no">02</span>
+        <div>
+          <h3>Imovinsko-pravni odnosi</h3>
+          <p>Stvarna prava, naknada štete, smetanje poseda, službenosti i uređenje imovinskih odnosa.</p>
+          <span class="maxim">Nemo plus iuris ad alium transferre potest quam ipse habet.</span>
         </div>
-        <h3>Porodično pravo</h3>
-        <p>Rešavam razvode, izdržavanje, starateljstvo i podelu bračne imovine.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6"/><path d="M9 16h6"/><path d="M9 8h3"/></svg>
+      </li>
+      <li class="reveal">
+        <span class="area-no">03</span>
+        <div>
+          <h3>Privredno pravo</h3>
+          <p>Osnivanje privrednih društava, upisi u registar, stečaj i likvidacija, privredni sporovi.</p>
         </div>
-        <h3>Nasledno pravo</h3>
-        <p>Vodim te kroz ostavinski postupak i sporove oko nasledstva.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-7h6v7"/><path d="M9 13h6"/></svg>
+      </li>
+      <li class="reveal">
+        <span class="area-no">04</span>
+        <div>
+          <h3>Nekretnine</h3>
+          <p>Kupoprodaja, stanovi u izgradnji, katastar nepokretnosti i stambeni sporovi.</p>
         </div>
-        <h3>Privredno pravo</h3>
-        <p>Sastavljam ugovore i zastupam firme u privrednim sporovima i postupcima.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="1.5"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>
+      </li>
+      <li class="reveal">
+        <span class="area-no">05</span>
+        <div>
+          <h3>Porodično pravo</h3>
+          <p>Razvod braka, zakonsko izdržavanje, vršenje roditeljskog prava i podela imovine.</p>
+          <span class="maxim">Porodica uživa posebnu zaštitu države.</span>
         </div>
-        <h3>Radno pravo</h3>
-        <p>Pomažem kod otkaza, mobinga, neisplaćenih zarada i radnih sporova.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 15l6-6"/><circle cx="9.5" cy="9.5" r="1"/><circle cx="14.5" cy="14.5" r="1"/></svg>
+      </li>
+      <li class="reveal">
+        <span class="area-no">06</span>
+        <div>
+          <h3>Nasledno pravo</h3>
+          <p>Ostavinski postupci, testamenti i sporovi među naslednicima.</p>
+          <span class="maxim">Naslediti se može na osnovu zakona i testamenta.</span>
         </div>
-        <h3>Poresko pravo</h3>
-        <p>Zastupam te pred poreskom upravom i u poreskim sporovima.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 17H3z"/><path d="M12 9v5"/><circle cx="12" cy="17" r="0.9" fill="currentColor" stroke="none"/></svg>
+      </li>
+      <li class="reveal">
+        <span class="area-no">07</span>
+        <div>
+          <h3>Izvršni postupci i poravnanja</h3>
+          <p>Zastupanje u izvršnim postupcima i sastavljanje poravnanja, da presuda ne ostane na papiru.</p>
         </div>
-        <h3>Prekršajno pravo</h3>
-        <p>Branim te u prekršajnom postupku, od saobraćajnih do privrednih prekršaja.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+      </li>
+      <li class="reveal">
+        <span class="area-no">08</span>
+        <div>
+          <h3>Upravni postupak i upravni spor</h3>
+          <p>Postupci pred državnim organima i inspekcijama, upravni spor pred Upravnim sudom.</p>
         </div>
-        <h3>Nekretnine</h3>
-        <p>Provera vlasništva, ugovori o kupoprodaji i rešavanje spornih parcela.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l5-4 3 2 4-5 8 4"/><path d="M6 8l3 5-3 5"/><path d="M17 9l3 5-3 5"/></svg>
+      </li>
+      <li class="reveal">
+        <span class="area-no">09</span>
+        <div>
+          <h3>Radno pravo</h3>
+          <p>Ugovori o radu, otkazi i radni sporovi, za zaposlene i za poslodavce.</p>
+          <span class="maxim">Pacta sunt servanda.</span>
         </div>
-        <h3>Imovinsko-pravni odnosi</h3>
-        <p>Rešavam sporove oko imovine, susvojine i deobe zajedničke imovine.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16"/><path d="M6 21V10"/><path d="M18 21V10"/><path d="M4 10l8-6 8 6"/><path d="M9 21v-6h6v6"/></svg>
+      </li>
+      <li class="reveal">
+        <span class="area-no">10</span>
+        <div>
+          <h3>Poresko pravo</h3>
+          <p>Postupci pred poreskim i carinskim organima i upravni spor protiv njihovih rešenja.</p>
         </div>
-        <h3>Upravni spor</h3>
-        <p>Zastupam te u sporu protiv rešenja državnih organa i institucija.</p>
-      </div>
-
-    </div>
+      </li>
+      <li class="reveal">
+        <span class="area-no">11</span>
+        <div>
+          <h3>Prekršajno pravo</h3>
+          <p>Prekršajni postupci pred policijom i prekršajnim sudom, privredni prestupi.</p>
+          <span class="maxim">Niko ne može zadržati imovinsku korist pribavljenu prekršajem.</span>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section id="tarife" style="background:var(--accent-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Cene i tarife</span>
-      <h2>Koliko košta pravna pomoć</h2>
-      <p style="margin:0 auto;">Cena zavisi od vrste predmeta i obima posla. Konkretnu ponudu dobijaš odmah nakon prvog razgovora, bez skrivenih troškova.</p>
-    </div>
-
-    <div class="pricing-grid">
-      <div class="price-card reveal">
-        <h3>Konsultacije</h3>
-        <p>Prvi razgovor u kancelariji ili telefonom - saznaješ na čemu stojiš i koje su ti opcije, pre nego što odlučiš da li ulaziš u postupak.</p>
-      </div>
-      <div class="price-card featured reveal">
-        <h3>Zastupanje pred sudom</h3>
-        <p>Naknada se određuje po Advokatskoj tarifi Srbije, u zavisnosti od vrednosti spora i broja ročišta koje predmet zahteva.</p>
-      </div>
-      <div class="price-card reveal">
-        <h3>Ugovori i podnesci</h3>
-        <p>Sastavljanje ugovora, tužbi, žalbi i drugih podnesaka naplaćuje se po dogovoru, u zavisnosti od složenosti dokumenta.</p>
-      </div>
-    </div>
-
-    <div class="pricing-note reveal">
-      <p>Na konsultacijama uvek znaš tačnu cenu pre nego što krenemo - nema doplata usred postupka.</p>
-    </div>
-  </div>
-</section>
-
-<section id="o-nama">
+<section id="advokat">
   <div class="wrap about-inner">
-    <div class="about-media reveal">
-      <img src="assets/advokat-radojevic-beograd.jpeg" alt="Advokat Radojević pregleda dokumentaciju u kancelariji u Beogradu">
-    </div>
+    <figure class="about-media reveal">
+      <div class="about-photo">
+        <img src="assets/Advokat-Robert-Radojevic.jpeg" alt="Portret advokata Roberta A. Radojevića u svetlom odelu" width="600" height="900" loading="lazy">
+      </div>
+      <figcaption class="about-caption"><span>Robert A. Radojević</span><span>Advokat</span></figcaption>
+    </figure>
+
     <div class="about-copy reveal">
-      <span class="eyebrow">O kancelariji</span>
-      <h2>Advokatska kancelarija Radojević, Beograd</h2>
-      <p>Radim sa fizičkim i pravnim licima, domaćim i stranim, koja treba da im se predmet rešava sistematično, ne nagađanjem.</p>
-      <p>Svaki predmet vodim lično, od prve konsultacije do izvršenja presude. Nema prebacivanja između saradnika, znaš tačno s kim pričaš u svakom trenutku postupka.</p>
-      <ul class="about-list">
+      <span class="eyebrow">O advokatu</span>
+      <h2 class="h2">Beograd je izabrao i ostao.</h2>
+      <p class="lead">Robert A. Radojević je rođen u Doboju, a pravo je studirao i advokaturu započeo u Beogradu. Grad u kome je odlučio da bude advokat danas mu je druga kuća.</p>
+      <p>Tokom pripravničkog staža radio je najviše radno, porodično, nasledno i privredno pravo i izvršne postupke. Zamenjivao je principale u parničnim postupcima i vodio odbrane u krivičnim postupcima.</p>
+
+      <ol class="timeline">
         <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Predmet vodim lično, od prve reči do poslednje presude
+          <time>2015.</time>
+          <p>Završava Pravni fakultet Univerziteta u Beogradu i upisuje se u imenik advokatskih pripravnika AK Beograda.</p>
         </li>
         <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Jasno objašnjenje pravne situacije, bez nepotrebnog žargona
+          <time>2015 – 2017.</time>
+          <p>Pripravnički staž u kancelarijama Gordane Laketić, Anđelković-Milošević i Karlović-Čegar. Dva meseca prati rad sudija krivičara u Palati pravde.</p>
         </li>
         <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Dostupnost za pitanja tokom celog postupka
+          <time>2017 – 2021.</time>
+          <p>Četiri godine skupštinskih i upravnih poslova u Opštini Vukosavlje. Seminari u Beču, Briselu, Budimpešti i Sarajevu.</p>
         </li>
+        <li>
+          <time>2021.</time>
+          <p>Polaže svih sedam delova pravosudnog ispita pred prvom komisijom, zatim advokatski ispit. Upisuje se u imenik advokata i osniva kancelariju Radojević.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="kancelarija" class="office">
+  <div class="wrap">
+    <figure class="office-photo reveal">
+      <img src="assets/advokatska-kancelarija.jpeg" alt="Prostor advokatske kancelarije Radojević sa radnim stolovima i kožnom sofom za stranke" width="1200" height="416" loading="lazy">
+      <figcaption>Makedonska 30, lokal 1 · prijem stranaka</figcaption>
+    </figure>
+
+    <div class="office-grid">
+      <div class="reveal">
+        <span class="eyebrow">Kancelarija i saradnici</span>
+        <h2 class="h2">Predmet koji prelazi granice Beograda.</h2>
+        <p>Kancelarija je u užem centru grada, na lokaciji prilagođenoj strankama. Kada predmet traži više od jednog advokata, oslanjamo se na mrežu proverenih saradnika.</p>
+      </div>
+      <ul class="network reveal" aria-label="Saradnici kancelarije">
+        <li><span>01</span>Advokatske kancelarije širom Srbije</li>
+        <li><span>02</span>Kancelarije iz regiona: BiH, HR, CG, SLO</li>
+        <li><span>03</span>Javnobeležničke kancelarije</li>
+        <li><span>04</span>Veštaci različitih struka</li>
+        <li><span>05</span>Prevodilačke agencije</li>
+        <li><span>06</span>Knjigovodstvene agencije</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="stats">
-  <div class="wrap stats-inner">
-    <div class="stats-text reveal">
-      <h2>Rad koji se vidi u rezultatima</h2>
-      <p>Ovo nisu obećanja - ovo je ono što stoji u završenim predmetima.</p>
-    </div>
-    <div class="stats-numbers">
-      <div class="stat-item reveal">
-        <div class="stat-number">99%</div>
-        <div class="stat-label">dobijenih slučajeva</div>
+<section class="principles on-ink" aria-label="Načela kancelarije">
+  <div class="wrap">
+    <span class="eyebrow reveal">Naše načelo</span>
+    <blockquote class="reveal">
+      <p>Ako ne budete zadovoljni našim radom, budite sigurni da ćete biti prvi sa takvim iskustvom.</p>
+      <cite>Advokatska kancelarija Radojević</cite>
+    </blockquote>
+
+    <ul class="values">
+      <li class="reveal"><strong>Poštenje</strong><span>Realna procena predmeta, i kada nije ona koju želite da čujete.</span></li>
+      <li class="reveal"><strong>Znanje</strong><span>Stalno usavršavanje kroz seminare i praksu.</span></li>
+      <li class="reveal"><strong>Poštovanje</strong><span>Jednak odnos prema svakom klijentu.</span></li>
+      <li class="reveal"><strong>Lojalnost</strong><span>Vaš interes je jedini koji zastupamo.</span></li>
+      <li class="reveal"><strong>Iskustvo</strong><span>Praksa iz sudnice, ne samo iz udžbenika.</span></li>
+    </ul>
+
+    <div class="two-way">
+      <div class="reveal">
+        <h3>Šta dobijate od nas</h3>
+        <p>Znanje, iskustvo i puno zalaganje u svakom postupku, uz poštovanje Kodeksa profesionalne etike advokata i propisa Republike Srbije.</p>
       </div>
-      <div class="stat-item reveal">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">zadovoljnih klijenata</div>
+      <div class="reveal">
+        <h3>Šta tražimo od Vas</h3>
+        <p>Iskrenost i otvorenost. Uspešan ishod dolazi kada advokat zna sve činjenice, i one neprijatne.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="kontakt">
+<section id="saradnja">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Kako teče saradnja</span>
+        <h2 class="h2">Od prvog razgovora do izvršenja.</h2>
+      </div>
+      <p class="lead">Unapred znate šta sledi i koliko košta. Nema iznenađenja usred postupka.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-no">I</div>
+        <h3>Konsultacije</h3>
+        <p>U kancelariji ili telefonom opišete situaciju. Dobijate procenu i opcije pre nego što odlučite.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-no">II</div>
+        <h3>Dogovor o nagradi</h3>
+        <p>Nagrada po advokatskoj tarifi ili posebno ugovorena, jasna pre prvog podneska.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-no">III</div>
+        <h3>Zastupanje</h3>
+        <p>Podnesci, ročišta i komunikacija sa sudom i organima. Vi znate gde je predmet u svakom trenutku.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-no">IV</div>
+        <h3>Ishod i izvršenje</h3>
+        <p>Kada je presuda doneta, vodimo i izvršni postupak ili poravnanje do kraja.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tarife" class="fees">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Cene i tarife</span>
+        <h2 class="h2">Advokatska tarifa, bez sitnih slova.</h2>
+      </div>
+      <p>Nagrada se obračunava po Tarifi o nagradama i naknadama troškova za rad advokata („Sl. glasnik RS“, br. 121/2012, 99/2020 i 37/2021). Iznosi su u dinarima.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Vrsta postupka">
+      <button class="tab" role="tab" id="tab-krivicni" aria-controls="p-krivicni" aria-selected="true">Krivični postupak</button>
+      <button class="tab" role="tab" id="tab-procenjivi" aria-controls="p-procenjivi" aria-selected="false">Parnični i drugi, procenjivi</button>
+      <button class="tab" role="tab" id="tab-neprocenjivi" aria-controls="p-neprocenjivi" aria-selected="false">Neprocenjivi predmeti</button>
+      <button class="tab" role="tab" id="tab-prekrsajni" aria-controls="p-prekrsajni" aria-selected="false">Prekršajni postupak</button>
+    </div>
+
+    <div class="fee-panel" id="p-krivicni" role="tabpanel" aria-labelledby="tab-krivicni">
+      <h3 class="sr-only">Krivični postupak</h3>
+      <div class="table-scroll">
+        <table class="t-nowrap">
+          <thead>
+            <tr><th>Zaprećena kazna</th><th>Odbrana, zastupanje privatnog tužioca</th><th>Zastupanje oštećenog, odložen pretres</th><th>Žalba, ponavljanje postupka</th><th>Privatna tužba, krivična prijava</th><th>Ostali podnesci</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>do 3 godine</th><td>18.000</td><td>9.750</td><td>33.000</td><td>16.500</td><td>8.250</td></tr>
+            <tr><th>3 – 5 godina</th><td>24.000</td><td>12.750</td><td>45.000</td><td>22.500</td><td>11.250</td></tr>
+            <tr><th>5 – 10 godina</th><td>31.500</td><td>16.500</td><td>60.000</td><td>30.000</td><td>15.000</td></tr>
+            <tr><th>10 – 15 godina</th><td>46.500</td><td>24.000</td><td>90.000</td><td>45.000</td><td>22.500</td></tr>
+            <tr><th>preko 15 godina</th><td>61.500</td><td>31.500</td><td>120.000</td><td>60.000</td><td>30.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="fee-panel" id="p-procenjivi" role="tabpanel" aria-labelledby="tab-procenjivi">
+      <h3 class="sr-only">Parnični, izvršni, vanparnični i drugi postupci, procenjivi predmeti</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Vrednost spora</th><th>Podnesak</th><th>Ročište</th><th>Odloženo ročište</th><th>Žalba</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>do 450.000</th><td>6.000</td><td>7.500</td><td>4.500</td><td>12.000</td></tr>
+            <tr><th>450.000 – 750.000</th><td>9.000</td><td>10.500</td><td>6.000</td><td>18.000</td></tr>
+            <tr><th>750.000 – 1.500.000</th><td>11.250</td><td>12.750</td><td>7.125</td><td>22.500</td></tr>
+            <tr><th>1.500.000 – 3.000.000</th><td>16.500</td><td>18.000</td><td>9.750</td><td>33.000</td></tr>
+            <tr><th>3.000.000 – 6.000.000</th><td>22.500</td><td>24.000</td><td>12.750</td><td>45.000</td></tr>
+            <tr><th>6.000.000 – 12.000.000</th><td>30.000</td><td>31.500</td><td>16.500</td><td>60.000</td></tr>
+            <tr><th>12.000.000 – 24.000.000</th><td>37.500</td><td>39.000</td><td>20.250</td><td>78.000</td></tr>
+            <tr><th>24.000.000 – 48.000.000</th><td>45.000</td><td>46.500</td><td>24.000</td><td>90.000</td></tr>
+            <tr><th>48.000.000 – 120.000.000</th><td class="wrap-cell">45.000 + 30 na svakih započetih 300.000</td><td class="wrap-cell">46.500 + 30 na svakih započetih 300.000</td><td class="wrap-cell">24.000 + 15 na svakih započetih 300.000</td><td class="wrap-cell">90.000 + 60 na svakih započetih 300.000</td></tr>
+            <tr><th>120.000.000 – 300.000.000</th><td class="wrap-cell">52.200 + 30 na svakih započetih 900.000</td><td class="wrap-cell">53.700 + 30 na svakih započetih 900.000</td><td class="wrap-cell">26.100 + 15 na svakih započetih 900.000</td><td class="wrap-cell">104.400 + 60 na svakih započetih 900.000</td></tr>
+            <tr><th>preko 300.000.000</th><td class="wrap-cell">58.200 + 30 na svakih započetih 4.500.000, najviše 88.200</td><td class="wrap-cell">59.700 + 30 na svakih započetih 4.500.000, najviše 89.500</td><td class="wrap-cell">29.100 + 15 na svakih započetih 4.500.000, najviše 44.100</td><td class="wrap-cell">116.400 + 60 na svakih započetih 4.500.000, najviše 176.400</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="fee-panel" id="p-neprocenjivi" role="tabpanel" aria-labelledby="tab-neprocenjivi">
+      <h3 class="sr-only">Parnični i drugi postupci, neprocenjivi predmeti</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Vrsta spora</th><th>Podnesak</th><th>Ročište</th><th>Odloženo ročište</th><th>Žalba</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Zakonsko izdržavanje</th><td>6.000</td><td>7.500</td><td>4.500</td><td>12.000</td></tr>
+            <tr><th>Vršenje roditeljskog prava</th><td>11.250</td><td>12.750</td><td>7.125</td><td>22.500</td></tr>
+            <tr><th>Smetanje poseda, razvod, neprocenjivi radni sporovi, porodični vanparnični postupci, upisi u katastar i APR, upravni postupak i spor</th><td>16.500</td><td>18.000</td><td>9.750</td><td>33.000</td></tr>
+            <tr><th>Ostali postupci pred državnim organom</th><td>19.500</td><td>21.000</td><td>11.250</td><td>39.000</td></tr>
+            <tr><th>Službenosti, stambeni sporovi, ostali postupci pred osnovnim sudom</th><td>22.500</td><td>24.000</td><td>14.250</td><td>54.000</td></tr>
+            <tr><th>Utvrđivanje očinstva, lična stanja, stečaj i likvidacija, postupci pred inspekcijama, domaća arbitraža i medijacija, ostali postupci pred privrednim sudom</th><td>25.500</td><td>27.000</td><td>14.250</td><td>54.000</td></tr>
+            <tr><th>Uređenje imovinskih odnosa, ostali vanparnični postupci, poreski, carinski i policijski upravni postupak i spor, ostali sporovi pred višim sudom</th><td>30.000</td><td>31.500</td><td>16.500</td><td>60.000</td></tr>
+            <tr><th>Ostali sporovi pred Upravnim sudom</th><td>36.000</td><td>37.500</td><td>19.500</td><td>72.000</td></tr>
+            <tr><th>Autorski sporovi, postupci pred Ustavnim sudom, međunarodnim sudom i arbitražom</th><td>45.000</td><td>46.500</td><td>24.000</td><td>90.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="fee-panel" id="p-prekrsajni" role="tabpanel" aria-labelledby="tab-prekrsajni">
+      <h3 class="sr-only">Prekršajni postupak i postupak privrednih prestupa</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Vrsta postupka</th><th>Podnesak</th><th>Ročište</th><th>Odloženo ročište</th><th>Žalba</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Privredni prestupi</th><td>30.000</td><td>31.500</td><td>16.500</td><td>60.000</td></tr>
+            <tr><th>Sud časti pri Privrednoj komori</th><td>16.500</td><td>18.000</td><td>9.750</td><td>33.000</td></tr>
+            <tr><th>Prekršajni postupak pred policijom</th><td>22.500</td><td>24.000</td><td>14.250</td><td>54.000</td></tr>
+            <tr><th>Prekršajni postupak pred Prekršajnim sudom</th><td>25.500</td><td>27.000</td><td>14.250</td><td>54.000</td></tr>
+            <tr><th>Ostali prekršajni postupci</th><td>16.500</td><td>18.000</td><td>9.750</td><td>33.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="fee-note">Može se ugovoriti nagrada do 50% niža od propisane tarifom, ili viša od nje.</p>
+
+    <div class="fee-aside">
+      <div class="reveal">
+        <h4>Posebno ugovorena nagrada</h4>
+        <p>Po dogovoru, visina nagrade i naknade troškova može se ugovoriti posebno za Vaš predmet, pre početka rada.</p>
+      </div>
+      <div class="reveal">
+        <h4>Stalna saradnja za firme</h4>
+        <p>Pravnim licima stojimo na raspolaganju za sva pravna pitanja, uz plaćanje po dogovorenoj satnici ili fiksni mesečni paušal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pitanja">
+  <div class="wrap faq-inner">
+    <div class="reveal">
+      <span class="eyebrow">Česta pitanja</span>
+      <h2 class="h2">Pre prvog razgovora.</h2>
+      <p>Ako Vaše pitanje nije ovde, pozovite kancelariju ili pošaljite upit.</p>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>Kako se obračunava cena advokatskih usluga?</summary>
+        <p>Po važećoj advokatskoj tarifi. Iznos zavisi od vrste postupka i vrednosti spora, a za krivične predmete od zaprećene kazne. Pregled po postupcima je u tabeli iznad.</p>
+      </details>
+      <details>
+        <summary>Može li nagrada da se dogovori drugačije od tarife?</summary>
+        <p>Može. Tarifa dozvoljava nagradu do 50% nižu od propisane ili višu od nje. Iznos dogovaramo pre nego što počnemo sa radom.</p>
+      </details>
+      <details>
+        <summary>Radite li sa firmama na stalnoj osnovi?</summary>
+        <p>Da. Pravnim licima nudimo stalnu saradnju za sva pravna pitanja, uz plaćanje po satnici ili fiksni mesečni paušal.</p>
+      </details>
+      <details>
+        <summary>Zastupate li strane državljane i firme?</summary>
+        <p>Da. Zastupamo domaća i strana fizička i pravna lica pred sudovima i organima u Srbiji. Korespondenciju vodimo na službenim jezicima Republike Srbije i na engleskom.</p>
+      </details>
+      <details>
+        <summary>Šta ako predmet traži rad van Beograda?</summary>
+        <p>Sarađujemo sa advokatskim kancelarijama širom Srbije i iz regiona (BiH, Hrvatska, Crna Gora, Slovenija), kao i sa javnim beležnicima, veštacima i prevodiocima.</p>
+      </details>
+      <details>
+        <summary>Rešenje nadležnog organa čekam godinama. Šta mogu da uradim?</summary>
+        <p>Kada organ ne donese rešenje u roku, može se pokrenuti upravni spor pred Upravnim sudom u Beogradu. Na konsultacijama proveravamo rokove i dokumentaciju.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
   <div class="wrap contact-inner">
     <div class="contact-info reveal">
       <span class="eyebrow">Kontakt</span>
-      <h2>Javi se i zakaži konsultacije</h2>
-      <p>Pozovi direktno ili popuni formu - odgovaram istog radnog dana i dogovaramo termin koji ti odgovara.</p>
+      <h2 class="h2">Zakažite konsultacije.</h2>
+      <p>Pozovite kancelariju ili pošaljite kratak opis situacije. Javljamo se sa predlogom termina.</p>
 
-      <div class="contact-items">
+      <dl class="contact-items">
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.33 1.79.6 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.27a2 2 0 0 1 2.11-.45c.86.27 1.75.47 2.65.6A2 2 0 0 1 22 16.92z"/></svg>
-          <div>
-            <strong>Telefon</strong>
-            <span>011 / 245 61 72</span>
-          </div>
+          <dt>Adresa</dt>
+          <dd>Makedonska 30, lokal 1<br>11000 Beograd<small>Prijem stranaka</small></dd>
         </div>
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
-          <div>
-            <strong>Email</strong>
-            <span>office@beogradadvokat.rs</span>
-          </div>
+          <dt>Telefoni</dt>
+          <dd>
+            <a href="tel:+381604168320">+381 60 416 8320</a>
+            <a href="tel:+381654168320">+381 65 416 8320</a>
+            <a href="tel:+381621795904">+381 62 179 5904</a>
+          </dd>
         </div>
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div>
-            <strong>Adresa</strong>
-            <span>Bulevar Kralja Aleksandra 15, Beograd</span>
-          </div>
+          <dt>Email</dt>
+          <dd><a href="mailto:advokatrobert.radojevic@gmail.com">advokatrobert.radojevic@gmail.com</a></dd>
         </div>
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <div>
-            <strong>Radno vreme</strong>
-            <span>Ponedeljak - petak, 09:00 - 17:00</span>
-          </div>
+          <dt>Jezici</dt>
+          <dd>Srpski, engleski</dd>
         </div>
-      </div>
+      </dl>
     </div>
 
-    <form class="contact-form reveal" action="#" method="post">
-      <h3>Pošalji upit</h3>
-      <p>Napiši ukratko o čemu se radi, javljam se sa predlogom termina.</p>
+    <form class="contact-form reveal" id="contactForm" action="mailto:advokatrobert.radojevic@gmail.com" method="post" enctype="text/plain">
+      <h3>Pitajte za savet</h3>
+      <p>Nekoliko rečenica je dovoljno. Detalje prolazimo na konsultacijama.</p>
       <div class="form-row">
         <div class="form-field">
           <label for="ime">Ime i prezime</label>
-          <input type="text" id="ime" name="ime" placeholder="Ime i prezime">
+          <input type="text" id="ime" name="ime" autocomplete="name" required>
         </div>
         <div class="form-field">
           <label for="telefon">Telefon</label>
-          <input type="tel" id="telefon" name="telefon" placeholder="06x xxx xxxx">
+          <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="form-field">
+          <label for="oblast">Oblast</label>
+          <select id="oblast" name="oblast">
+            <option>Druga oblast ili ne znam</option>
+            <option>Krivično pravo</option>
+            <option>Imovinsko-pravni odnosi</option>
+            <option>Privredno pravo</option>
+            <option>Nekretnine</option>
+            <option>Porodično pravo</option>
+            <option>Nasledno pravo</option>
+            <option>Izvršni postupak i poravnanje</option>
+            <option>Upravni postupak i spor</option>
+            <option>Radno pravo</option>
+            <option>Poresko pravo</option>
+            <option>Prekršajno pravo</option>
+          </select>
         </div>
       </div>
       <div class="form-field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="tvoj@email.rs">
+        <label for="poruka">Opis situacije</label>
+        <textarea id="poruka" name="poruka" rows="4" required></textarea>
       </div>
-      <div class="form-field">
-        <label for="poruka">Opiši situaciju</label>
-        <textarea id="poruka" name="poruka" rows="4" placeholder="U par rečenica - o kakvom predmetu se radi"></textarea>
+      <div class="form-foot">
+        <small>Podaci iz upita ostaju između Vas i kancelarije.</small>
+        <button type="submit" class="btn has-arrow">Pošaljite upit
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></svg>
+        </button>
       </div>
-      <button type="submit" class="btn btn-primary">Pošalji upit i zakaži poziv</button>
     </form>
   </div>
-</section>
 
-<section class="final-cta">
-  <div class="wrap reveal">
-    <h2>Ne čekaj da rok prođe sam od sebe</h2>
-    <p>Prvi razgovor ti ništa ne oduzima, a jasno znaš na čemu stojiš. Pozovi ili zakaži konsultacije preko forme.</p>
-    <div class="final-cta-actions">
-      <a href="tel:0112456172" class="btn btn-light">Pozovi 011 / 245 61 72</a>
-      <a href="#kontakt" class="btn btn-outline" style="border-color:#fff;color:#fff;">Zakaži konsultacije</a>
-    </div>
+  <div class="map">
+    <iframe title="Mapa: Makedonska 30, Beograd" src="https://maps.google.com/maps?q=Makedonska%2030%2C%20Beograd&amp;t=m&amp;z=16&amp;output=embed&amp;iwloc=near" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 
-<footer>
+</main>
+
+<footer class="on-ink">
   <div class="wrap">
     <div class="footer-top">
-      <div>
-        <div class="footer-logo">
-          <img src="assets/logo.png" alt="Logo advokatske kancelarije Radojević">
-          <span>Advokatska kancelarija Radojević</span>
-        </div>
-        <p>Pravna pomoć za fizička i pravna lica u Beogradu, iz svih oblasti građanskog, privrednog i krivičnog prava.</p>
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Radojević, advokatska kancelarija" width="160" height="145" loading="lazy">
+        <p>Pravna pomoć i zastupanje za domaća i strana, fizička i pravna lica u Beogradu i Srbiji.</p>
       </div>
       <div class="footer-col">
-        <h4>Sajt</h4>
+        <h4>Kancelarija</h4>
         <ul>
-          <li><a href="#usluge">Usluge</a></li>
-          <li><a href="#tarife">Tarife</a></li>
-          <li><a href="#o-nama">O nama</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#oblasti">Oblasti prava</a></li>
+          <li><a href="#advokat">O advokatu</a></li>
+          <li><a href="#tarife">Cene i tarife</a></li>
+          <li><a href="#pitanja">Česta pitanja</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Kontakt</h4>
+        <h4>Telefoni</h4>
         <ul>
-          <li><a href="tel:0112456172">011 / 245 61 72</a></li>
-          <li><a href="mailto:office@beogradadvokat.rs">office@beogradadvokat.rs</a></li>
-          <li><a href="#">Bulevar Kralja Aleksandra 15, Beograd</a></li>
+          <li><a href="tel:+381604168320">+381 60 416 8320</a></li>
+          <li><a href="tel:+381654168320">+381 65 416 8320</a></li>
+          <li><a href="tel:+381621795904">+381 62 179 5904</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Adresa</h4>
+        <ul>
+          <li>Makedonska 30, lokal 1</li>
+          <li>11000 Beograd</li>
+          <li><a href="mailto:advokatrobert.radojevic@gmail.com">Pišite nam</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Advokatska kancelarija Radojević, Beograd. Sva prava zadržana.</p>
-      <p>Izrada sajta u skladu sa Zakonom o advokaturi.</p>
+      <p>© 2026 Advokatska kancelarija Radojević, Beograd</p>
+      <p>Podaci predstavljeni na sajtu nisu namenjeni reklamiranju Advokatske kancelarije Radojević.</p>
     </div>
   </div>
 </footer>
 
 <script>
-  // header scrolled state
-  const headerEl = document.querySelector('header');
-  window.addEventListener('scroll', function(){
-    if(window.scrollY > 20){
-      headerEl.classList.add('scrolled');
-    } else {
-      headerEl.classList.remove('scrolled');
-    }
-  });
+  // header
+  var headerEl = document.querySelector('header');
+  function onScroll(){ headerEl.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
 
-  // hamburger toggle
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  hamburgerBtn.addEventListener('click', function(){
-    hamburgerBtn.classList.toggle('active');
-    mobileNav.classList.toggle('open');
-  });
-  document.querySelectorAll('.mobile-nav a').forEach(function(link){
-    link.addEventListener('click', function(){
-      hamburgerBtn.classList.remove('active');
-      mobileNav.classList.remove('open');
+  // hamburger
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  function setMenu(open){
+    hamburgerBtn.classList.toggle('active', open);
+    mobileNav.classList.toggle('open', open);
+    hamburgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  hamburgerBtn.addEventListener('click', function(){ setMenu(!mobileNav.classList.contains('open')); });
+  mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+
+  // tarife: tabovi (bez JS-a sve tabele su vidljive jedna ispod druge)
+  var tabs = document.querySelectorAll('.tab');
+  function selectTab(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ selectTab(t); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if(!d) return;
+      var next = tabs[(i + d + tabs.length) % tabs.length];
+      selectTab(next); next.focus();
     });
   });
+  if(tabs.length) selectTab(tabs[0]);
 
-  // scroll reveal
+  // forma: otvara email sa popunjenim upitom
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target;
+    var body = 'Ime i prezime: ' + f.ime.value + '\nTelefon: ' + f.telefon.value + '\nEmail: ' + f.email.value + '\nOblast: ' + f.oblast.value + '\n\n' + f.poruka.value;
+    window.location.href = 'mailto:advokatrobert.radojevic@gmail.com?subject=' + encodeURIComponent('Upit sa sajta: ' + f.oblast.value) + '&body=' + encodeURIComponent(body);
+  });
+
+  // reveal
   if('IntersectionObserver' in window){
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(function(entries){
+    var io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
+        if(entry.isIntersecting){ entry.target.classList.add('in-view'); io.unobserve(entry.target); }
       });
-    }, {threshold:0.12});
-    revealEls.forEach(function(el){ observer.observe(el); });
+    }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in-view'); });
   }
 </script>
 
